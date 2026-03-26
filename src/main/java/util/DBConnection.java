@@ -5,17 +5,15 @@ public class DBConnection {
 	public static Connection getConnection() throws Exception {
 	    Class.forName("com.mysql.cj.jdbc.Driver");
 	    
-	   
-	    String url = System.getenv("MYSQL_URL"); 
+	    
+	    String host = System.getenv("MYSQLHOST");
+	    String port = System.getenv("MYSQLPORT");
+	    String dbName = System.getenv("MYSQLDATABASE"); // Screenshot mein MYSQLDATABASE hai
 	    String user = System.getenv("MYSQLUSER");
 	    String pass = System.getenv("MYSQLPASSWORD");
-	    
-	   
-	    if (url == null) {
-	        url = "jdbc:mysql://localhost:3306/school_db"; 
-	        user = "root";
-	        pass = "nishu@12345";
-	    }
+
+	    // Connection URL (Localhost ko hata kar ye link use hoga)
+	    String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName;
 
 	    return DriverManager.getConnection(url, user, pass);
 	}
