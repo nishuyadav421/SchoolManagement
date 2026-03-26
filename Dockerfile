@@ -1,5 +1,5 @@
 # Step 1: Start with a pre-configured Tomcat & Java environment
-FROM tomcat:10.1-jdk17
+FROM tomcat:10.1-jdk21-openjdk
 
 # Step 2: Remove the default Tomcat sample apps to keep it clean
 RUN rm -rf /usr/local/tomcat/webapps/*
