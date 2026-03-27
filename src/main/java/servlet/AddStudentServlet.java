@@ -17,7 +17,7 @@ public class AddStudentServlet extends HttpServlet {
             Student s = new Student();
             s.setName(req.getParameter("name"));
             s.setAge(Integer.parseInt(req.getParameter("age")));
-            s.setStudentClass(req.getParameter("class"));
+            s.setStudentClass(req.getParameter("studentClass"));
 
             StudentDAO.addStudent(s);
 
