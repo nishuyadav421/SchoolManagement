@@ -140,7 +140,7 @@
             <a href="viewStudents" class="nav-link"><i class="fa-solid fa-users-viewfinder"></i> View Students</a>
             <a href="#" class="nav-link"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a>
             <a href="#" class="nav-link"><i class="fa-solid fa-file-invoice-dollar"></i> Fees</a>
-            <a href="login.jsp" class="nav-link text-danger mt-5"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            <a href="logout.jsp" class="nav-link text-danger mt-5"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         </nav>
     </div>
 
