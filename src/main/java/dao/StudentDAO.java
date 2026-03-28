@@ -88,4 +88,18 @@ public class StudentDAO {
             ps.executeUpdate();
         }
     }
+    public static int getTotalStudentsCount() {
+        int count = 0;
+        try (Connection conn = DBConnection.getConnection()) { // Aapka connection method
+            String sql = "SELECT COUNT(*) FROM students";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
 }

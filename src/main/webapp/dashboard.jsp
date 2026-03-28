@@ -1,5 +1,13 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="dao.StudentDAO" %> 	
+<%
+    // Database se count fetch karna
+    StudentDAO dao = new StudentDAO();
+    int studentCount = dao.getTotalStudentsCount();
+%>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +31,6 @@
             display: flex;
         }
 
-        /* Sidebar Styling */
         .sidebar {
             width: 260px;
             height: 100vh;
@@ -68,7 +75,6 @@
             border-left: 4px solid var(--teal-accent);
         }
 
-        /* Main Content */
         .main-content {
             margin-left: 260px;
             padding: 30px;
@@ -82,7 +88,6 @@
             margin-bottom: 40px;
         }
 
-        /* Stats Cards */
         .stat-card {
             background-color: var(--card-dark);
             border: none;
@@ -160,11 +165,13 @@
                 <div class="stat-card d-flex align-items-center justify-content-between">
                     <div>
                         <div class="stat-label">Total Students</div>
-                        <div class="stat-val">1,245</div>
+                        <%-- Dynamic Student Count Yahan Hai --%>
+                        <div class="stat-val"><%= studentCount %></div>
                     </div>
                     <i class="fa-solid fa-user-graduate stat-icon"></i>
                 </div>
             </div>
+            <%-- Baaki cards abhi hardcoded hain --%>
             <div class="col-md-3">
                 <div class="stat-card d-flex align-items-center justify-content-between">
                     <div>
