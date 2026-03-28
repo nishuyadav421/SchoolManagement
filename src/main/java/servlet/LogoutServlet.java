@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,5 +25,7 @@ public class LogoutServlet extends HttpServlet {
         
         // 3. Wapas login page par bhej do
         response.sendRedirect("login.jsp");
+        
+        
     }
 }
